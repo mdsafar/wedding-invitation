@@ -123,12 +123,45 @@ function createSparkles(startX, startY) {
   }
 }
 
-document.addEventListener("click", (e) => {
+// Only events browsers actually count as "user activation" can unlock
+// audio playback. touchstart, pointerdown, scroll, and mousemove do NOT
+// count on most mobile browsers — click, touchend, pointerup, and keydown do.
+const GESTURE_EVENTS = ["click", "touchend", "pointerup", "keydown"];
+
+function triggerFirstInteractionTick(e) {
   if (hasStartedTick) return;
-  if (e.target.closest("#acceptBtn")) return;
+  if (e.target && e.target.closest && e.target.closest("#acceptBtn")) return;
 
   hasStartedTick = true;
   startTick();
+
+  GESTURE_EVENTS.forEach((evt) =>
+    document.removeEventListener(evt, triggerFirstInteractionTick)
+  );
+}
+
+GESTURE_EVENTS.forEach((evt) =>
+  document.addEventListener(evt, triggerFirstInteractionTick, { passive: true })
+);
+
+// Best-effort: try to autoplay the moment the page loads.
+// Most browsers block audio autoplay until the user interacts with the page
+// (that's a browser policy, not something the code can bypass) — but some
+// desktop browsers allow it if the visitor has been on the site before.
+window.addEventListener("load", () => {
+  if (hasStartedTick || !tick) return;
+
+  tick.volume = 0.45;
+  tick.loop = true;
+
+  tick
+    .play()
+    .then(() => {
+      hasStartedTick = true;
+    })
+    .catch(() => {
+      // Blocked — will start on first tap/scroll/click/key instead.
+    });
 });
 
 acceptBtn.addEventListener("click", (e) => {
