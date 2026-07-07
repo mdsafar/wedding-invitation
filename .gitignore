@@ -67,9 +67,3 @@ coverage/
 # ==========================
 .Trashes
 .Spotlight-V100
-
-# ==========================
-# Optional
-# Uncomment if you don't want to upload music
-# ==========================
-assets/song.mp3
