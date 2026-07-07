@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Amina & Anzil Wedding Invitation</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Montserrat:wght@300;400;500;600&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div id="petals"></div>
+  <audio id="song" src="assets/song.mp3" preload="auto"></audio>
+
+
+  <main class="page">
+
+    <!-- Decline Modal (outside card wrapper) -->
+    <div id="declineModal" class="decline-modal">
+      <div class="decline-card">
+        <div class="decline-emoji">💔</div>
+        <h2 class="decline-title">We'll Miss You</h2>
+        <div class="mini-line">❤</div>
+        <p class="decline-msg">
+          We're sorry you can't make it.<br>
+          You'll always be in our hearts on this special day.
+        </p>
+        <p class="decline-names">— Amina & Anzil</p>
+        <button id="declineClose" class="decline-close-btn">Close</button>
+      </div>
+    </div>
+
+
+    <div class="card-wrapper">
+
+      <!-- Invite Screen -->
+      <section id="inviteScreen" class="card screen active">
+        <div class="floral floral-left"></div>
+        <div class="floral floral-right"></div>
+        <div class="corner-heart">♡</div>
+
+        <p class="eyebrow">WEDDING INVITATION</p>
+        <div class="mini-line">❤</div>
+
+        <h1 class="main-title">Amina & Anzil</h1>
+
+        <p class="eyebrow small">TOGETHER WITH LOVE</p>
+
+        <p class="invite-text">Invite you to celebrate our wedding</p>
+
+        <div class="date-box">
+          <div>
+            <strong>SEPTEMBER</strong>
+            <span>2026, Thursday</span>
+          </div>
+          <div class="date-number">10</div>
+          <div>
+            <strong>11:30</strong>
+            <span>– 12:00 PM</span>
+          </div>
+        </div>
+
+        <p class="pin">⌖</p>
+        <h3 class="venue">FKM AUDITORIUM</h3>
+        <p class="location">Vettamukk, Karunagappally</p>
+
+        <div class="divider-heart">❤</div>
+
+        <p class="eyebrow small compact">COUNTDOWN TO WEDDING</p>
+        <div class="countdown" data-countdown></div>
+
+        <p class="attend">WILL YOU ATTEND?</p>
+
+        <div class="actions">
+          <button id="acceptBtn" class="btn accept">
+            <span>Accept</span>
+            <b>♡</b>
+          </button>
+
+          <button id="declineBtn" class="btn decline">
+            <span>Decline</span>
+            <b>♡</b>
+          </button>
+        </div>
+      </section>
+
+      <!-- Thanks Screen -->
+      <section id="thanksScreen" class="card screen thanks-card">
+        <div class="floral floral-left"></div>
+        <div class="floral floral-right"></div>
+        <div class="corner-heart">♡</div>
+
+        <h1 class="thanks-title">We Can't Wait!</h1>
+        <div class="mini-line">❤</div>
+
+        <p class="thanks-name">AMINA & ANZIL</p>
+
+        <div class="message-box">
+          <span>"</span>
+          <p>Your RSVP has been received!<br>We look forward to celebrating with you.</p>
+          <span>"</span>
+        </div>
+
+        <div class="info-card">
+          <div class="date-small">
+            <strong>10</strong>
+            <span>SEP</span>
+            <p>WEDDING DAY<br><b>2026</b></p>
+          </div>
+
+          <div class="vertical-line"></div>
+
+          <div class="venue-small">
+            <h3>FKM AUDITORIUM</h3>
+            <p>VETTAMUKK, KARUNAGAPPALLY</p>
+            <a class="map-btn" target="_blank" href="https://maps.app.goo.gl/U52SCcccNE3AEvEt5">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+                style="margin-right:6px;vertical-align:middle;flex-shrink:0">
+                <polygon points="3 11 22 2 13 21 11 13 3 11" />
+              </svg>
+              GET DIRECTIONS
+            </a>
+          </div>
+        </div>
+
+        <a class="phone-btn" href="tel:9497534737">☎ 9497534737</a>
+
+        <div class="divider-heart">❤</div>
+
+        <p class="eyebrow small compact">COUNTDOWN TO WEDDING</p>
+        <div class="countdown" data-countdown></div>
+      </section>
+
+    </div><!-- /.card-wrapper -->
+  </main>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
